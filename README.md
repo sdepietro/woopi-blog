@@ -15,7 +15,7 @@ Desarrollo de un sistema de blog completo. Con las siguientes características b
 ## Autores
 
 ### Sergio De Pietro
-Desarrollo PHP, base de datos
+Backend: Desarrollo PHP, base de datos
 
 ### Sebastián Torres
-Maquetado y diseño 
+Frontend 
