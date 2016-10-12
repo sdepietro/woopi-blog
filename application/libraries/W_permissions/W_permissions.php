@@ -36,10 +36,10 @@ class W_Permissions {
     //Chequeamos que los permisos del usuario para esa seccion.
     function check_access($id_section)
     {
-        if (is_array($this->ci->session->userdata('permisos')))//Comprobamos que tenga un array de permisos
+        if (is_array($this->ci->session->userdata('permissions')))//Comprobamos que tenga un array de permisos
         {
             //Comprobamos que tenga permisos en las secciones
-            if (!in_array($id_section, $this->ci->session->userdata('permisos')))
+            if (!in_array($id_section, $this->ci->session->userdata('permissions')))
             {
                 redirect(base_url('errors/access_denied'));
             }
@@ -53,10 +53,10 @@ class W_Permissions {
     //Chequeamos que los permisos del usuario para esa seccion.
     function show_section($id_section)
     {
-        if (is_array($this->ci->session->userdata('permisos')))//Comprobamos que tenga un array de permisos
+        if (is_array($this->ci->session->userdata('permissions')))//Comprobamos que tenga un array de permisos
         {
             //Comprobamos que tenga permisos en las secciones
-            if (in_array($id_section, $this->ci->session->userdata('permisos')))
+            if (in_array($id_section, $this->ci->session->userdata('permissions')))
             {
                 $return = true;
             }
@@ -85,7 +85,7 @@ class W_Permissions {
 
         foreach ($permisos as $permiso)
         {
-            $array_permisos[] = $permiso->seccion_id;
+            $array_permisos[] = $permiso->section_id;
         }
         return $array_permisos;
     }

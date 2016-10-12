@@ -13,10 +13,10 @@ class Login extends CI_Controller {
     public function index() {
 
         if ($this->session->userdata('user_id')) {
-            redirect('inicio', 'refresh');
+            redirect('admin/dashboard', 'refresh');
         }
 
-        $this->load->view('login/login'); //muestra ventana de login
+        $this->load->view('admin/login/login'); //muestra ventana de login
     }
 
     public function iniciarsesion() {
@@ -40,8 +40,7 @@ class Login extends CI_Controller {
                     );
                     $this->session->set_userdata($sess_array);
                 }
-                //$session_data = $this->session->userdata('user_valido'); //impacta la variable sesion en session data.
-                redirect('inicio', 'refresh');
+                redirect('admin/dashboard', 'refresh');
             }
             else {
                 // echo "va por aca";
@@ -50,9 +49,7 @@ class Login extends CI_Controller {
                 $data['user'] = $user;
                 $data['mensajeerror'] = "El user o password son incorrectos.";
                 $data['main_content'] = "inicio";
-                $this->load->view('login/login', $data); //muestra ventana de login
-                // echo "Error!!";
-                // redirect('inicio', 'refresh');
+                $this->load->view('admin/login/login', $data); //muestra ventana de login
             }
         }
         else {
@@ -61,28 +58,25 @@ class Login extends CI_Controller {
             $data['estiloinputerrorlogin'] = "input-error";
             $data['mensajeerror'] = "Debe llenar user y password.";
             $data['main_content'] = "inicio";
-            $this->load->view('login/login', $data); //muestra ventana de login
+            $this->load->view('admin/login/login', $data); //muestra ventana de login
         }
     }
 
     function logout() {
         $sess_array = array(
             'user_id',
-            'user',
-            'nombre',
-            'apellido',
+            'name',
+            'last_name',
             'mail',
             'lastactivity',
-            'empresa_id',
-            'permisos'
+            'permissions'
         );
         foreach ($sess_array as $value) {
-
             $this->session->unset_userdata($value);
         }
 
 
-        redirect('inicio', 'refresh');
+        redirect('admin/login', 'refresh');
     }
 
 }

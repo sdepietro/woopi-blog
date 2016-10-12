@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <?php $this->load->view('template/header'); ?>
+    <?php $this->load->view('admin/template/header'); ?>
 
     <body>
 
@@ -11,7 +11,7 @@
         <!--close-Header-part--> 
         <!--top-Header-menu-->
 
-        <?php $this->load->view('template/botonerasuperior'); ?>
+        <?php $this->load->view('admin/template/botonerasuperior'); ?>
         <!--close-top-Header-menu-->
         <!--start-top-serch-->
         <!--        <div id="search">
@@ -20,7 +20,7 @@
                 </div>-->
         <!--close-top-serch-->
         <!--sidebar-menu-->
-        <?php $this->load->view('template/botoneraizquierda'); ?>
+        <?php $this->load->view('admin/template/botoneraizquierda'); ?>
 
         <!--sidebar-menu-->
 
@@ -31,7 +31,7 @@
 
         <!--end-main-container-part-->
 
-        <?php $this->load->view('template/footer'); ?>
+        <?php $this->load->view('admin/template/footer'); ?>
 
     </body>
 </html>
