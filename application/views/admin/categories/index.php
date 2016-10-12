@@ -8,23 +8,21 @@
         <div class="span12">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                    <h5>Listado de Posts</h5>
+                    <h5>Listado de Categorías</h5>
                 </div>
                 <div class="widget-content nopadding">
                     <table class="table table-bordered data-table">
                         <thead>
                             <tr>
-                                <th>Fecha</th>
                                 <th>Título</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($post_list as $row): ?>
+                            <?php foreach ($categories_list as $row): ?>
                                 <tr class="gradeX">
-                                    <td><?= spanish_date($row->created_date) ?></td>
                                     <td><?= $row->title ?></td>
-                                    <td><a href="<?= panel_url("posts/add/" . $row->post_id) ?>" class="btn btn-success btn-mini"><i class="icon-pencil"></i></a></td>
+                                    <td><a href="<?= panel_url("categories/add/" . $row->category_id) ?>" class="btn btn-success btn-mini"><i class="icon-pencil"></i></a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -33,7 +31,7 @@
                 </div>
                 <hr>
                 <div class="widget-content">
-                    <a class="btn btn-primary" href="<?= panel_url('posts/add') ?>">Agregar Post</a>
+                    <a class="btn btn-primary" href="<?= panel_url('categories/add') ?>">Agregar Categoría</a>
                 </div>
             </div>
         </div>
