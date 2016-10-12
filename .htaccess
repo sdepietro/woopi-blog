@@ -1,0 +1,7 @@
+Header set Access-Control-Allow-Origin "*"
+
+AddDefaultCharset utf-8
+RewriteEngine on
+RewriteCond $1 !^(index\.php|favicon.ico|robots\.txt|assets|apiexplorer)
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
