@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-10-12 19:10:41
+Date: 2016-10-12 19:19:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,15 +25,16 @@ CREATE TABLE `categories` (
   `user_id` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO `categories` VALUES ('1', 'Este es un ejemplo', '1', '2016-10-12 15:26:15');
-INSERT INTO `categories` VALUES ('2', 'segundo tes ', '1', '2016-10-12 00:00:00');
-INSERT INTO `categories` VALUES ('3', 'segundo test 3', '1', '2016-10-12 00:00:00');
-INSERT INTO `categories` VALUES ('4', 'segundo test 5', '1', '2016-10-12 00:00:00');
+INSERT INTO `categories` VALUES ('1', 'Humor', '1', '2016-10-12 15:26:15');
+INSERT INTO `categories` VALUES ('2', 'Programacion', '1', '2016-10-12 00:00:00');
+INSERT INTO `categories` VALUES ('3', 'Fotografía', '1', '2016-10-12 00:00:00');
+INSERT INTO `categories` VALUES ('4', 'Farándula', '1', '2016-10-12 00:00:00');
+INSERT INTO `categories` VALUES ('5', 'Test', '1', '2016-10-12 00:00:00');
 
 -- ----------------------------
 -- Table structure for permissions
