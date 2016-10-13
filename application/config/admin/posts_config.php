@@ -11,6 +11,11 @@ $config['add_edit_rules'] = array(
         'rules' => 'required|xss_clean'
     ),
     array(
+        'field' => 'category_id',
+        'label' => 'Categoría',
+        'rules' => 'required|xss_clean'
+    ),
+    array(
         'field' => 'date',
         'label' => 'Fecha',
         'rules' => 'required|xss_clean'

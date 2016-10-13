@@ -9,6 +9,7 @@ class Posts extends CI_Controller {
         parent::__construct();
         $this->load->model('Users_Model');
         $this->load->model('Posts_Model');
+        $this->load->model('Categories_Model');
         /* -------Bloque para chequear permisos--------- */
         $this->w_permissions->check_access($id_section = 1); //   @todo Revisar el ID de esta seccion
         //----------------------------------------------------
@@ -34,6 +35,7 @@ class Posts extends CI_Controller {
             $data['row'] = $this->Posts_Model->get($config);
         }
        
+            $data['category_list'] = $this->Categories_Model->get();
 
         $data['main_content'] = "admin/posts/add_view";
         $this->load->view('admin/template/template', $data);
@@ -44,6 +46,7 @@ class Posts extends CI_Controller {
         $title = $this->input->post('title');
         $date = $this->input->post('date');
         $text = $this->input->post('text');
+        $category_id = $this->input->post('category_id');
               
         $this->form_validation->set_rules($this->c_config);
 
@@ -53,6 +56,7 @@ class Posts extends CI_Controller {
                 'title' => $title,
                 'date' => mysql_date($date),
                 'text' => $text,
+                'category_id' => $category_id,
                 'user_id' => $this->session->userdata('user_id'),
             );
 

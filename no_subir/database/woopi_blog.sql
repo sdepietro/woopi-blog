@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-10-12 19:19:38
+Date: 2016-10-13 18:07:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -58,6 +58,7 @@ INSERT INTO `permissions` VALUES ('1', '1', '1');
 DROP TABLE IF EXISTS `post`;
 CREATE TABLE `post` (
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `text` text,
@@ -69,10 +70,10 @@ CREATE TABLE `post` (
 -- ----------------------------
 -- Records of post
 -- ----------------------------
-INSERT INTO `post` VALUES ('1', null, 'Este es un ejemplo', 'fds  sgsdf sdfg sdfg sdfg sdfg sdfg sdfg sdf', '1', '2016-10-12 15:26:15');
-INSERT INTO `post` VALUES ('2', '2016-10-12', 'segundo tes ', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', '1', '2016-10-12 00:00:00');
-INSERT INTO `post` VALUES ('3', '2016-10-12', 'segundo test 3', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', '1', '2016-10-12 00:00:00');
-INSERT INTO `post` VALUES ('4', '2016-10-12', 'segundo test 5', '<p>aaaaaaaaaaaaaaaaaaaaaaaaaert fdgsdfghsdfg sdfg sdfg sdfgd sdfg sfdg sdfg ssa dfasdf asdf sdfsddddddfg sdfg sdfg sdfg fdfffffffffffffffffffffffffffffffffff</p>', '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('1', '2', '2016-10-13', 'Este es un ejemplo', '<p>fds sgsdf sdfg sdfg sdfg sdfg sdfg sdfg sdf</p>', '1', '2016-10-12 15:26:15');
+INSERT INTO `post` VALUES ('2', null, '2016-10-12', 'segundo tes ', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('3', null, '2016-10-12', 'segundo test 3', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('4', null, '2016-10-12', 'segundo test 5', '<p>aaaaaaaaaaaaaaaaaaaaaaaaaert fdgsdfghsdfg sdfg sdfg sdfgd sdfg sfdg sdfg ssa dfasdf asdf sdfsddddddfg sdfg sdfg sdfg fdfffffffffffffffffffffffffffffffffff</p>', '1', '2016-10-12 00:00:00');
 
 -- ----------------------------
 -- Table structure for sections

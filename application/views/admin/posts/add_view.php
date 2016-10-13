@@ -47,21 +47,32 @@
                                 <input type="text" name="title" class="span11" value="<?= (empty($row->title)) ? "" : $row->title ?>" placeholder="Título" />
                             </div>
                         </div>
-
                         <div class="control-group">
-                            <label class="control-label">Contenido :</label>
+                            <label class="control-label">Categoría :</label>
                             <div class="controls">
-                                <textarea name="text"><?= (empty($row->text)) ? "" : $row->text ?></textarea>
+                                <div>
+                                    <select name="category_id">
+                                        <?php foreach ($category_list as $category): ?>
+                                            <option value="<?= $category->category_id ?>" <?php empty($row->category_id) ? "" : (($category->category_id == $row->category_id) ? "selected" : "") ?>><?= $category->title ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <?php if (!empty($row)): ?>
-                            <input type="hidden" name="post_id" value="<?= $row->post_id ?>"
-                        <?php endif; ?>
+                            <div class="control-group">
+                                <label class="control-label">Contenido :</label>
+                                <div class="controls">
+                                    <textarea name="text"><?= (empty($row->text)) ? "" : $row->text ?></textarea>
+                                </div>
+                            </div>
 
-                               <div class="form-actions">
-                            <button type="submit" class="btn btn-success">Guardar</button>
-                        </div>
+                            <?php if (!empty($row)): ?>
+                                <input type="hidden" name="post_id" value="<?= $row->post_id ?>"
+                            <?php endif; ?>
+
+                                   <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Guardar</button>
+                            </div>
                     </form>
                 </div>
             </div>
