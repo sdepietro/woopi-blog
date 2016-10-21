@@ -15,10 +15,8 @@ class Dashboard extends CI_Controller {
 
     public function index() {
         $data['widgets'] = array();
-
         $data['main_content'] = "admin/dashboard/index";
         $this->load->view('admin/template/template', $data);
-        
     }
 
 }

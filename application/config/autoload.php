@@ -104,7 +104,7 @@ $autoload['helper'] = array('string', 'security', 'url', 'w_utility_helper','w_h
   | config files.  Otherwise, leave it blank.
   |
  */
-$autoload['config'] = array();
+$autoload['config'] = array('blog');
 
 /*
   | -------------------------------------------------------------------

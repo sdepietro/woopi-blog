@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50620
+Source Server         : Localhost
+Source Server Version : 50711
 Source Host           : localhost:3306
 Source Database       : woopi_blog
 
 Target Server Type    : MYSQL
-Target Server Version : 50620
+Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-10-21 14:11:01
+Date: 2016-10-21 18:24:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -72,10 +72,10 @@ CREATE TABLE `post` (
 -- ----------------------------
 -- Records of post
 -- ----------------------------
-INSERT INTO `post` VALUES ('1', '1', '2016-10-13', 'Este es un ejemplo', '<p>fds sgsdf sdfg sdfg sdfg sdfg sdfg sdfg sdf</p>', '9437c5b6815ab796b6e1340403ef7dff7dd85b36.jpg', '1', '2016-10-12 15:26:15');
-INSERT INTO `post` VALUES ('2', null, '2016-10-12', 'segundo tes ', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', null, '1', '2016-10-12 00:00:00');
-INSERT INTO `post` VALUES ('3', null, '2016-10-12', 'segundo test 3', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', null, '1', '2016-10-12 00:00:00');
-INSERT INTO `post` VALUES ('4', null, '2016-10-12', 'segundo test 5', '<p>aaaaaaaaaaaaaaaaaaaaaaaaaert fdgsdfghsdfg sdfg sdfg sdfgd sdfg sfdg sdfg ssa dfasdf asdf sdfsddddddfg sdfg sdfg sdfg fdfffffffffffffffffffffffffffffffffff</p>', null, '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('1', '1', '2016-10-13', 'Este es un ejemplo', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '9437c5b6815ab796b6e1340403ef7dff7dd85b36.jpg', '1', '2016-10-12 15:26:15');
+INSERT INTO `post` VALUES ('2', '1', '2016-10-12', 'Invasión de los extraterrestres', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '35980d8f006f5d2194629ed4fb94d93cb0287c0f.jpg', '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('3', '1', '2016-10-12', 'Ciudad del futuro', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '4638d872f1e6e344ae80768124ed7a7bfa495359.jpg', '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('4', '1', '2016-10-12', 'Terrorismo en la ciudad', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '11798a965b27c0dbe93f1d1d5a767b3987f6a8e7.jpg', '1', '2016-10-12 00:00:00');
 
 -- ----------------------------
 -- Table structure for sections
@@ -96,6 +96,39 @@ INSERT INTO `sections` VALUES ('3', 'Especialidades');
 INSERT INTO `sections` VALUES ('4', 'Especialistas');
 INSERT INTO `sections` VALUES ('5', 'Calendarios');
 INSERT INTO `sections` VALUES ('6', 'Administracion');
+
+-- ----------------------------
+-- Table structure for tags
+-- ----------------------------
+DROP TABLE IF EXISTS `tags`;
+CREATE TABLE `tags` (
+  `tag_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`tag_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tags
+-- ----------------------------
+INSERT INTO `tags` VALUES ('1', 'Amsterdam');
+INSERT INTO `tags` VALUES ('2', 'Washington');
+INSERT INTO `tags` VALUES ('3', 'pepe');
+INSERT INTO `tags` VALUES ('4', 'jose');
+INSERT INTO `tags` VALUES ('5', 'londo');
+
+-- ----------------------------
+-- Table structure for tags_post
+-- ----------------------------
+DROP TABLE IF EXISTS `tags_post`;
+CREATE TABLE `tags_post` (
+  `tag_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  PRIMARY KEY (`tag_id`,`post_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tags_post
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for users
