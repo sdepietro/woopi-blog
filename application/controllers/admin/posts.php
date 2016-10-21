@@ -34,20 +34,27 @@ class Posts extends CI_Controller {
             );
             $data['row'] = $this->Posts_Model->get($config);
         }
-       
-            $data['category_list'] = $this->Categories_Model->get();
+
+        $data['errors'] = $this->session->flashdata('errors');
+
+        $data['category_list'] = $this->Categories_Model->get();
 
         $data['main_content'] = "admin/posts/add_view";
         $this->load->view('admin/template/template', $data);
     }
 
     public function insert() { // crea o actualiza los datos de los especialistas
+        $errors = "";
+
         $post_id = $this->input->post('post_id');
         $title = $this->input->post('title');
         $date = $this->input->post('date');
         $text = $this->input->post('text');
         $category_id = $this->input->post('category_id');
-              
+
+        
+        sd($_POST);
+        
         $this->form_validation->set_rules($this->c_config);
 
         if (($this->form_validation->run() == TRUE)) {
@@ -62,27 +69,55 @@ class Posts extends CI_Controller {
 
             if (empty($post_id)) {
                 $data_update['created_date'] = mysql_date_time();
-                $this->Posts_Model->add($data_update);
+                $post_id = $this->Posts_Model->add($data_update);
             }
             else {
-            
-                
-                
                 $this->Posts_Model->edit($data_update, $post_id);
             }
-            redirect(panel_url('posts'));
-        }
-        else {
 
-            if (isset($post_id) != null && $post_id != "") {
-                $data ['post_id'] = $post_id;
+            if (!empty($_FILES['post_image']['name'])) {
+                $name = $_FILES['post_image']['name'];
+                $v = explode(".", $name);
+                $ext = end($v);
+                $ext = ($ext == "jpeg") ? "jpg" : $ext; //si es jpeg lo renombramos a jpg
+                $new_name = sha1($post_id . "post_image") . "." . $ext; //Generamos el nombre único de la imagen
+
+                $config_upload = array(
+                    'upload_path' => './assets/img/posts/',
+                    'allowed_types' => "gif|jpg|png|jpeg",
+                    'overwrite' => TRUE,
+                    'max_size' => "2000KB",
+                    'max_height' => "8000",
+                    'max_width' => "8000",
+                    'file_name' => $new_name
+                );
+
+                $this->load->library('upload', $config_upload);
+
+                if (!$this->upload->do_upload('post_image')) {
+                    $errors .=$this->upload->display_errors();
+                }
+                else {
+                    $data_update = array(
+                        "image" => $new_name
+                    );
+
+                    $this->Posts_Model->edit($data_update, $post_id);
+                }
             }
 
-            $data['errors'] = validation_errors();
-
-            $data['main_content'] = "admin/posts/add_view";
-            $this->load->view('admin/template/template', $data);
+            if (empty($errors)) {
+                redirect(panel_url('posts'));
+            }
         }
+
+        $errors .= validation_errors();
+
+        $post_id = empty($post_id) ? "" : $post_id;
+
+        $this->session->set_flashdata('errors', $errors);
+
+        redirect(panel_url('posts/add/' . $post_id));
     }
 
 }

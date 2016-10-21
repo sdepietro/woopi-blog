@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/matrix-style.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/matrix-media.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/datepicker.css" />
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/uniform.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/select2.css" />
     <link href="<?= base_url() ?>assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/jquery.gritter.css" />

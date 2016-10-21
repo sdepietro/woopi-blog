@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Localhost
-Source Server Version : 50711
+Source Server         : localhost
+Source Server Version : 50620
 Source Host           : localhost:3306
 Source Database       : woopi_blog
 
 Target Server Type    : MYSQL
-Target Server Version : 50711
+Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2016-10-13 18:07:03
+Date: 2016-10-21 14:11:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `categories` (
   `user_id` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of categories
@@ -35,6 +35,7 @@ INSERT INTO `categories` VALUES ('2', 'Programacion', '1', '2016-10-12 00:00:00'
 INSERT INTO `categories` VALUES ('3', 'Fotografía', '1', '2016-10-12 00:00:00');
 INSERT INTO `categories` VALUES ('4', 'Farándula', '1', '2016-10-12 00:00:00');
 INSERT INTO `categories` VALUES ('5', 'Test', '1', '2016-10-12 00:00:00');
+INSERT INTO `categories` VALUES ('6', 'pepe', '1', '2016-10-14 00:00:00');
 
 -- ----------------------------
 -- Table structure for permissions
@@ -62,6 +63,7 @@ CREATE TABLE `post` (
   `date` date DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `text` text,
+  `image` varchar(255) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   PRIMARY KEY (`post_id`)
@@ -70,10 +72,10 @@ CREATE TABLE `post` (
 -- ----------------------------
 -- Records of post
 -- ----------------------------
-INSERT INTO `post` VALUES ('1', '2', '2016-10-13', 'Este es un ejemplo', '<p>fds sgsdf sdfg sdfg sdfg sdfg sdfg sdfg sdf</p>', '1', '2016-10-12 15:26:15');
-INSERT INTO `post` VALUES ('2', null, '2016-10-12', 'segundo tes ', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', '1', '2016-10-12 00:00:00');
-INSERT INTO `post` VALUES ('3', null, '2016-10-12', 'segundo test 3', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', '1', '2016-10-12 00:00:00');
-INSERT INTO `post` VALUES ('4', null, '2016-10-12', 'segundo test 5', '<p>aaaaaaaaaaaaaaaaaaaaaaaaaert fdgsdfghsdfg sdfg sdfg sdfgd sdfg sfdg sdfg ssa dfasdf asdf sdfsddddddfg sdfg sdfg sdfg fdfffffffffffffffffffffffffffffffffff</p>', '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('1', '1', '2016-10-13', 'Este es un ejemplo', '<p>fds sgsdf sdfg sdfg sdfg sdfg sdfg sdfg sdf</p>', '9437c5b6815ab796b6e1340403ef7dff7dd85b36.jpg', '1', '2016-10-12 15:26:15');
+INSERT INTO `post` VALUES ('2', null, '2016-10-12', 'segundo tes ', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', null, '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('3', null, '2016-10-12', 'segundo test 3', '<p>ert fdgsdfghsdfg sdfg sdfg sdfg</p>', null, '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('4', null, '2016-10-12', 'segundo test 5', '<p>aaaaaaaaaaaaaaaaaaaaaaaaaert fdgsdfghsdfg sdfg sdfg sdfgd sdfg sfdg sdfg ssa dfasdf asdf sdfsddddddfg sdfg sdfg sdfg fdfffffffffffffffffffffffffffffffffff</p>', null, '1', '2016-10-12 00:00:00');
 
 -- ----------------------------
 -- Table structure for sections

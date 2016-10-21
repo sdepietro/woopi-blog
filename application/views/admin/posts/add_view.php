@@ -32,7 +32,14 @@
                 </div>
 
                 <div class="widget-content nopadding">
-                    <form action="<?= panel_url("posts/insert") ?>" method="post" class="form-horizontal">
+
+                    <?php if (!empty($errors)): ?>
+                        <div class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+                            <h4 class="alert-heading">Error!</h4>
+                            <?= $errors ?>
+                        </div>
+                    <?php endif; ?>
+                    <?= form_open_multipart(panel_url() . "posts/insert", 'class="form-horizontal" id="frmAddPost"') ?>
                         <div class="control-group">
                             <label class="control-label">Fecha :</label>
                             <div class="controls">
@@ -45,6 +52,12 @@
                             <label class="control-label">Título :</label>
                             <div class="controls">
                                 <input type="text" name="title" class="span11" value="<?= (empty($row->title)) ? "" : $row->title ?>" placeholder="Título" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Imagen</label>
+                            <div class="controls">
+                                <input type="file" name="post_image" />
                             </div>
                         </div>
                         <div class="control-group">
@@ -67,13 +80,14 @@
                             </div>
 
                             <?php if (!empty($row)): ?>
-                                <input type="hidden" name="post_id" value="<?= $row->post_id ?>"
+                                <input type="hidden" name="post_id" value="<?= $row->post_id ?>">
                             <?php endif; ?>
 
-                                   <div class="form-actions">
-                                <button type="submit" class="btn btn-success">Guardar</button>
-                            </div>
-                    </form>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                        <?= form_close(); ?>
                 </div>
             </div>
         </div>

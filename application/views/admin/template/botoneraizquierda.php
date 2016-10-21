@@ -11,5 +11,9 @@
         <li class="<?= check_active('posts') ?>">
             <a href="<?= panel_url() ?>posts"><i class="icon icon-pencil"></i> <span>Posts</span></a> 
         </li>
+        <hr>
+        <li class="">
+            <a href="<?= base_url('no_subir/matrix_template/') ?>" target="_blank"><i class="icon icon-circle"></i> <span>Template Backend</span></a> 
+        </li>
     </ul>
 </div>

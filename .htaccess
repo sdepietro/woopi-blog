@@ -2,7 +2,7 @@
 
 AddDefaultCharset utf-8
 RewriteEngine on
-RewriteCond $1 !^(index\.php|favicon.ico|robots\.txt|assets|apiexplorer)
+RewriteCond $1 !^(index\.php|favicon.ico|robots\.txt|assets|apiexplorer|no_subir)
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L,QSA]
