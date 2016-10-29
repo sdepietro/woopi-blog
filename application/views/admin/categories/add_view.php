@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap-wysihtml5.css" />
+<link rel="stylesheet" href="<?= base_url() ?>assets/admin//css/bootstrap-wysihtml5.css" />
 
 
 
@@ -51,7 +51,7 @@
     </div>
 </div>
 
-<script src="<?= base_url() ?>assets/js/bootstrap-wysihtml5.js"></script> 
+<script src="<?= base_url() ?>assets/admin/js/bootstrap-wysihtml5.js"></script> 
 <script>
     $('.textarea_editor').wysihtml5();
 </script>

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap-wysihtml5.css" />
+<link rel="stylesheet" href="<?= base_url() ?>assets/admin/css/bootstrap-wysihtml5.css" />
 
 
 
@@ -91,7 +91,7 @@
                     <?php endif; ?>
 
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <button type="button" class="btn btn-success">Guardar</button>
                     </div>
                     <?= form_close(); ?>
                 </div>
@@ -99,56 +99,39 @@
         </div>
     </div>
 </div>
-<script src="<?= base_url() ?>assets/js/bootstrap-wysihtml5.js"></script> 
+<script src="<?= base_url() ?>assets/admin/js/bootstrap-wysihtml5.js"></script> 
 <script>
     $('.textarea_editor').wysihtml5();
 
-    jQuery(document).ready(function () {
-
-        var citynames = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            prefetch: {
-                url: '<?= base_url('assets/citynames.json') ?>',
-                filter: function (list) {
-                    return $.map(list, function (cityname) {
-                        return {name: cityname};
-                    });
-                }
-            }
-        });
-        citynames.initialize();
-
-        $('#tags').tagsinput({
-            typeaheadjs: {
-                name: 'citynames',
-                displayKey: 'name',
-                valueKey: 'name',
-                source: citynames.ttAdapter()
-            }
-        });
-
-
-
-//        
-//        $('#tags').tagsinput(
-//                {typeahead:
-//                            {
-//                                items: 4,
-//                                source: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
-//                            },
-//                    
-//                }
-//        /* {
-//         typeahead: {
-//         source: function (query) {
-//         return $.get('<?= panel_url('posts/getTags') ?>/' + query);
-//         }
-//         }
-//         }*/
-//        );
-
+function initTagAutocomplete(){
+    var citynames = new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      prefetch: {
+        url: '../../../assets/citynames.json'+,
+        filter: function(list) {
+          return $.map(list, function(cityname) {
+            return { name: cityname }; });
+        }
+      },
+      remote: {
+        url: '<?= base_url(); ?>/assets/citynames.json',
+        filter: function(list) {
+          return $.map(list, function(cityname) {
+            return { name: cityname }; });
+        }
+      }
     });
+    citynames.initialize();
 
+    $('#tags').tagsinput({
+      typeaheadjs: {
+        name: 'citynames',
+        displayKey: 'name',
+        valueKey: 'name',
+        source: citynames.ttAdapter()
+      }
+    });
+}
 
 </script>
