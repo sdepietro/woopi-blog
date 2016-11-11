@@ -8,19 +8,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?= base_url() ?>">Woopi Blog</a>
+            <a class="navbar-brand" href="<?= base_url() ?>"><?= get_w_config_value('site_title') ?></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">Noticias</a>
-                </li>
-                <li>
-                    <a href="#">Biografía</a>
-                </li>
-                <li>
-                    <a href="#">Contacto</a>
+                    <a href="<?= base_url() ?>">Noticias</a>
                 </li>
             </ul>
         </div>

@@ -6,7 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Blog Home - Start Bootstrap Template</title>
+        <title><?= get_w_config_value('site_title') ?></title>
 
         <!-- Bootstrap Core CSS -->
         <link href="<?= base_url() ?>assets/front/css/bootstrap.min.css" rel="stylesheet">

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-10-21 18:24:01
+Date: 2016-11-11 16:20:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `categories` (
   `user_id` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of categories
@@ -36,6 +36,24 @@ INSERT INTO `categories` VALUES ('3', 'Fotografía', '1', '2016-10-12 00:00:00')
 INSERT INTO `categories` VALUES ('4', 'Farándula', '1', '2016-10-12 00:00:00');
 INSERT INTO `categories` VALUES ('5', 'Test', '1', '2016-10-12 00:00:00');
 INSERT INTO `categories` VALUES ('6', 'pepe', '1', '2016-10-14 00:00:00');
+INSERT INTO `categories` VALUES ('7', 'Orl fernando Diamante', '1', '2016-11-11 00:00:00');
+
+-- ----------------------------
+-- Table structure for configs
+-- ----------------------------
+DROP TABLE IF EXISTS `configs`;
+CREATE TABLE `configs` (
+  `config_id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`config_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of configs
+-- ----------------------------
+INSERT INTO `configs` VALUES ('1', 'site_title', 'Título del sitio', 'ORL Fernando Diamante');
 
 -- ----------------------------
 -- Table structure for permissions

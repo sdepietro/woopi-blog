@@ -8,6 +8,7 @@ class Category extends CI_Controller {
         parent::__construct();
         $this->load->model('Categories_Model');
         $this->load->model('Posts_Model');
+        
     }
 
     public function index($category_id = null, $page = 1) {
