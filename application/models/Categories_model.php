@@ -15,6 +15,8 @@ Class Categories_Model extends CI_Model {
             $this->db->limit(1);
         }
 
+        $this->db->where('categories.deleted', NULL);
+
         $query = $this->db->get();
 
         //return

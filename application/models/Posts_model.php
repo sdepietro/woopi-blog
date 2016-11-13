@@ -1,13 +1,13 @@
 <?php
 
-Class Posts_Model extends CI_Model {
+Class Posts_Model extends CI_Model
+{
     /*
      * Obtenemos los datos de uno o varios
      */
 
-    function get($data = array()) {
-
-
+    function get($data = array())
+    {
 
         $this->db->select('post.post_id,
                         post.category_id,
@@ -42,7 +42,13 @@ Class Posts_Model extends CI_Model {
             $this->db->order_by('date', 'desc');
         }
 
+        if (!empty($data['limit'])) {
+            $this->db->limit($data['limit']);
+            $this->db->order_by('date', 'desc');
+        }
 
+
+        $this->db->where('post.deleted', NULL);
         $query = $this->db->get();
 
         //sd($this->db->last_query());
@@ -50,33 +56,33 @@ Class Posts_Model extends CI_Model {
         if ($query->num_rows() > 0) {
             if (!empty($data['post_id'])) {
                 return $query->row();
-            }
-            else {
+            } else {
                 return $query->result();
             }
-        }
-        else {
+        } else {
             if (!empty($data['post_id'])) {
                 return FALSE;
-            }
-            else {
+            } else {
                 return array();
             }
         }
     }
 
-    function edit($data, $post_id) {
+    function edit($data, $post_id)
+    {
         $this->db->where('post_id', $post_id);
         $this->db->update('post', $data);
         return true;
     }
 
-    function del($post_id) {
+    function del($post_id)
+    {
         $this->db->where('post_id', $post_id);
         $this->db->delete('post');
     }
 
-    function add($data) {
+    function add($data)
+    {
         $this->db->insert('post', $data);
         $insert_id = $this->db->insert_id();
         return $insert_id;

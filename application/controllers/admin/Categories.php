@@ -77,4 +77,13 @@ class Categories extends CI_Controller {
         }
     }
 
+    public function del($id)
+    {
+        $data_update = array(
+            'deleted' => date("Y-m-d H:i:s"),
+        );
+        $this->Categories_Model->edit($data_update, $id);
+        redirect(panel_url('categories'));
+    }
+
 }

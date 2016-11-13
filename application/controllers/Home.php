@@ -2,15 +2,18 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends CI_Controller
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->load->model('Categories_Model');
         $this->load->model('Posts_Model');
     }
 
-    public function index($page = 1) {
+    public function index($page = 1)
+    {
 
         $data_config['page'] = $page;
         $data['posts_list'] = $this->Posts_Model->get($data_config);
@@ -25,7 +28,8 @@ class Home extends CI_Controller {
         $this->load->view('front/template/template', $data);
     }
 
-    public function page($page = 1) {
+    public function page($page = 1)
+    {
         $this->index($page);
     }
 

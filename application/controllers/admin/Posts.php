@@ -3,9 +3,11 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Posts extends CI_Controller {
+class Posts extends CI_Controller
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->load->model('Users_Model');
         $this->load->model('Posts_Model');
@@ -23,7 +25,8 @@ class Posts extends CI_Controller {
      * Listado de posts
      */
 
-    public function index() {
+    public function index()
+    {
         $data['post_list'] = $this->Posts_Model->get();
         $data['main_content'] = "admin/posts/index";
         $this->load->view('admin/template/template', $data);
@@ -33,7 +36,8 @@ class Posts extends CI_Controller {
      * Formulario de carga de post nuevo y de edición
      */
 
-    public function add($post_id = '') {
+    public function add($post_id = '')
+    {
 
         if ($post_id != "") {
             $config = array(
@@ -51,12 +55,9 @@ class Posts extends CI_Controller {
 
             $data['tags'] = implode(",", $tags_array);
             $data['row'] = $post;
-        }
-        else {
+        } else {
             $data['tags'] = "";
         }
-
-
 
 
         $data['errors'] = $this->session->flashdata('errors');
@@ -71,7 +72,8 @@ class Posts extends CI_Controller {
      * Guardamos los datos del formulario
      */
 
-    public function insert() { // crea o actualiza los datos de los especialistas
+    public function insert()
+    {
         $errors = "";
 
         $post_id = $this->input->post('post_id');
@@ -96,8 +98,7 @@ class Posts extends CI_Controller {
             if (empty($post_id)) {
                 $data_update['created_date'] = mysql_date_time();
                 $post_id = $this->Posts_Model->add($data_update);
-            }
-            else {
+            } else {
                 $this->Posts_Model->edit($data_update, $post_id);
             }
 
@@ -106,7 +107,7 @@ class Posts extends CI_Controller {
             $this->Tags_Model->delete_all_asociations($post_id);
 
             foreach ($tags as $tag) {
-                if($tag == ""){
+                if ($tag == "") {
                     continue;
                 }
                 $config_data = array(
@@ -117,8 +118,7 @@ class Posts extends CI_Controller {
                 $tag_db = $this->Tags_Model->get($config_data);
                 if (empty($tag_db)) {
                     $tag_id = $this->Tags_Model->add($config_data);
-                }
-                else {
+                } else {
                     $tag_id = $tag_db->tag_id;
                 }
 
@@ -151,9 +151,8 @@ class Posts extends CI_Controller {
 
                 //Si la imagen no se sube correctamente
                 if (!$this->upload->do_upload('post_image')) {
-                    $errors .=$this->upload->display_errors(); //Generamos el error
-                }
-                else {
+                    $errors .= $this->upload->display_errors(); //Generamos el error
+                } else {
                     $data_update = array(
                         "image" => $new_name
                     );
@@ -173,7 +172,18 @@ class Posts extends CI_Controller {
         redirect(panel_url('posts/add/' . $post_id));
     }
 
-    public function getTags($name = "") {
+
+    public function del($post_id)
+    {
+        $data_update = array(
+            'deleted' => date("Y-m-d H:i:s"),
+        );
+        $this->Posts_Model->edit($data_update, $post_id);
+        redirect(panel_url('posts'));
+    }
+
+    public function getTags($name = "")
+    {
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE');
 
@@ -188,7 +198,7 @@ class Posts extends CI_Controller {
         foreach ($tags as $tag) {
             $tags_array[] = $tag->name;
         }
-        
+
         echo json_encode($tags_array);
     }
 
