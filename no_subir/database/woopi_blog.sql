@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Localhost
-Source Server Version : 50711
+Source Server         : localhost
+Source Server Version : 50620
 Source Host           : localhost:3306
 Source Database       : woopi_blog
 
 Target Server Type    : MYSQL
-Target Server Version : 50711
+Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2016-11-11 16:20:56
+Date: 2016-11-13 18:19:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,19 +24,20 @@ CREATE TABLE `categories` (
   `title` varchar(255) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
+  `deleted` date DEFAULT NULL,
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO `categories` VALUES ('1', 'Humor', '1', '2016-10-12 15:26:15');
-INSERT INTO `categories` VALUES ('2', 'Programacion', '1', '2016-10-12 00:00:00');
-INSERT INTO `categories` VALUES ('3', 'Fotografía', '1', '2016-10-12 00:00:00');
-INSERT INTO `categories` VALUES ('4', 'Farándula', '1', '2016-10-12 00:00:00');
-INSERT INTO `categories` VALUES ('5', 'Test', '1', '2016-10-12 00:00:00');
-INSERT INTO `categories` VALUES ('6', 'pepe', '1', '2016-10-14 00:00:00');
-INSERT INTO `categories` VALUES ('7', 'Orl fernando Diamante', '1', '2016-11-11 00:00:00');
+INSERT INTO `categories` VALUES ('1', 'Humor', '1', '2016-10-12 15:26:15', null);
+INSERT INTO `categories` VALUES ('2', 'Programacion', '1', '2016-10-12 00:00:00', null);
+INSERT INTO `categories` VALUES ('3', 'Fotografía', '1', '2016-10-12 00:00:00', null);
+INSERT INTO `categories` VALUES ('4', 'Farándula', '1', '2016-10-12 00:00:00', null);
+INSERT INTO `categories` VALUES ('5', 'Test', '1', '2016-10-12 00:00:00', '2016-11-13');
+INSERT INTO `categories` VALUES ('6', 'pepe', '1', '2016-10-14 00:00:00', '2016-11-13');
+INSERT INTO `categories` VALUES ('7', 'Orl fernando Diamante', '1', '2016-11-11 00:00:00', null);
 
 -- ----------------------------
 -- Table structure for configs
@@ -48,12 +49,13 @@ CREATE TABLE `configs` (
   `name` varchar(255) DEFAULT NULL,
   `value` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of configs
 -- ----------------------------
 INSERT INTO `configs` VALUES ('1', 'site_title', 'Título del sitio', 'ORL Fernando Diamante');
+INSERT INTO `configs` VALUES ('2', 'limit_api_news', 'Cantidad de noticias en la API', '3');
 
 -- ----------------------------
 -- Table structure for permissions
@@ -84,16 +86,17 @@ CREATE TABLE `post` (
   `image` varchar(255) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
+  `deleted` datetime DEFAULT NULL,
   PRIMARY KEY (`post_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of post
 -- ----------------------------
-INSERT INTO `post` VALUES ('1', '1', '2016-10-13', 'Este es un ejemplo', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '9437c5b6815ab796b6e1340403ef7dff7dd85b36.jpg', '1', '2016-10-12 15:26:15');
-INSERT INTO `post` VALUES ('2', '1', '2016-10-12', 'Invasión de los extraterrestres', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '35980d8f006f5d2194629ed4fb94d93cb0287c0f.jpg', '1', '2016-10-12 00:00:00');
-INSERT INTO `post` VALUES ('3', '1', '2016-10-12', 'Ciudad del futuro', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '4638d872f1e6e344ae80768124ed7a7bfa495359.jpg', '1', '2016-10-12 00:00:00');
-INSERT INTO `post` VALUES ('4', '1', '2016-10-12', 'Terrorismo en la ciudad', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '11798a965b27c0dbe93f1d1d5a767b3987f6a8e7.jpg', '1', '2016-10-12 00:00:00');
+INSERT INTO `post` VALUES ('1', '1', '2016-10-13', 'Este es un ejemplo', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '9437c5b6815ab796b6e1340403ef7dff7dd85b36.jpg', '1', '2016-10-12 15:26:15', '2016-11-13 16:57:18');
+INSERT INTO `post` VALUES ('2', '1', '2016-10-12', 'Invasión de los extraterrestres', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '35980d8f006f5d2194629ed4fb94d93cb0287c0f.jpg', '1', '2016-10-12 00:00:00', '2016-11-13 16:57:27');
+INSERT INTO `post` VALUES ('3', '1', '2016-10-12', 'Ciudad del futuro', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '4638d872f1e6e344ae80768124ed7a7bfa495359.jpg', '1', '2016-10-12 00:00:00', null);
+INSERT INTO `post` VALUES ('4', '1', '2016-10-12', 'Terrorismo en la ciudad', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur fringilla quam eu sollicitudin. Integer maximus, sem vitae gravida euismod, orci turpis dignissim augue, sit amet elementum lacus nisl ut mi. Nam feugiat id mi a gravida. Nunc vestibulum est consectetur, aliquet felis ac, dictum odio. Maecenas accumsan nunc eget tortor placerat semper. Aliquam et ornare purus. Mauris sed sapien et justo malesuada pellentesque. Morbi tincidunt lectus nibh, dictum tincidunt neque luctus sit amet. In varius gravida sem quis malesuada. Phasellus elit enim, congue et placerat et, dapibus tempus eros. Sed eleifend laoreet tellus, nec tincidunt ante feugiat eu. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet nibh sapien. Nunc non tincidunt erat. Nam non ante tortor.</p>\r\n<p>Vivamus sit amet sem semper, molestie leo gravida, eleifend odio. Cras id lorem nec orci venenatis volutpat. Nam rhoncus viverra diam, ut tempus lorem pharetra ac. Sed dolor justo, tincidunt et eleifend sit amet, finibus quis augue. Aenean cursus hendrerit turpis, ac vehicula nunc finibus in. Ut dignissim nisl ac lectus suscipit, vel cursus orci bibendum. Nam porttitor placerat tellus ut sollicitudin. Maecenas venenatis bibendum semper.</p>', '11798a965b27c0dbe93f1d1d5a767b3987f6a8e7.jpg', '1', '2016-10-12 00:00:00', null);
 
 -- ----------------------------
 -- Table structure for sections
