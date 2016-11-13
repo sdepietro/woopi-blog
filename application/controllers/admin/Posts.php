@@ -45,15 +45,15 @@ class Posts extends CI_Controller
             );
             $post = $this->Posts_Model->get($config);
 
-            $tags = $this->Tags_Model->get_tags_post($post_id);
+            //$tags = $this->Tags_Model->get_tags_post($post_id);
 
-            $tags_array = array();
+           /* $tags_array = array();
             foreach ($tags as $tag) {
                 $tags_array[] = $tag->name;
-            }
+            }*/
 
 
-            $data['tags'] = implode(",", $tags_array);
+            //$data['tags'] = implode(",", $tags_array);
             $data['row'] = $post;
         } else {
             $data['tags'] = "";
@@ -63,6 +63,7 @@ class Posts extends CI_Controller
         $data['errors'] = $this->session->flashdata('errors');
 
         $data['category_list'] = $this->Categories_Model->get();
+
 
         $data['main_content'] = "admin/posts/add_view";
         $this->load->view('admin/template/template', $data);

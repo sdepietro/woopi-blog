@@ -66,19 +66,19 @@
                             <div>
                                 <select name="category_id">
                                     <?php foreach ($category_list as $category): ?>
-                                        <option value="<?= $category->category_id ?>" <?php empty($row->category_id) ? "" : (($category->category_id == $row->category_id) ? "selected" : "") ?>><?= $category->title ?></option>
+                                        <option value="<?= $category->category_id ?>" <?= empty($row->category_id) ? "" : (($category->category_id == $row->category_id) ? " selected " : "") ?>><?= $category->title ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
                     </div>
 
-                    <div class="control-group">
-                        <label class="control-label">Tags :</label>
-                        <div class="controls">
-                            <input id="tags" type="text" data-role="tagsinput" name="tags" value="<?= $tags ?>" />
-                        </div>
-                    </div>
+<!--                    <div class="control-group">-->
+<!--                        <label class="control-label">Tags :</label>-->
+<!--                        <div class="controls">-->
+<!--                            <input id="tags" type="text" data-role="tagsinput" name="tags" value="--><?//= $tags ?><!--" />-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="control-group">
                         <label class="control-label">Contenido :</label>
                         <div class="controls">
@@ -91,7 +91,7 @@
                     <?php endif; ?>
 
                     <div class="form-actions">
-                        <button type="button" class="btn btn-success">Guardar</button>
+                        <button type="submit" class="btn btn-success">Guardar</button>
                     </div>
                     <?= form_close(); ?>
                 </div>
@@ -103,35 +103,35 @@
 <script>
     $('.textarea_editor').wysihtml5();
 
-function initTagAutocomplete(){
-    var citynames = new Bloodhound({
-      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-      queryTokenizer: Bloodhound.tokenizers.whitespace,
-      prefetch: {
-        url: '../../../assets/citynames.json'+,
-        filter: function(list) {
-          return $.map(list, function(cityname) {
-            return { name: cityname }; });
-        }
-      },
-      remote: {
-        url: '<?= base_url(); ?>/assets/citynames.json',
-        filter: function(list) {
-          return $.map(list, function(cityname) {
-            return { name: cityname }; });
-        }
-      }
-    });
-    citynames.initialize();
-
-    $('#tags').tagsinput({
-      typeaheadjs: {
-        name: 'citynames',
-        displayKey: 'name',
-        valueKey: 'name',
-        source: citynames.ttAdapter()
-      }
-    });
-}
+//function initTagAutocomplete(){
+//    var citynames = new Bloodhound({
+//      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+//      queryTokenizer: Bloodhound.tokenizers.whitespace,
+//      prefetch: {
+//        url: '../../../assets/citynames.json'+,
+//        filter: function(list) {
+//          return $.map(list, function(cityname) {
+//            return { name: cityname }; });
+//        }
+//      },
+//      remote: {
+//        url: '<?//= base_url(); ?>///assets/citynames.json',
+//        filter: function(list) {
+//          return $.map(list, function(cityname) {
+//            return { name: cityname }; });
+//        }
+//      }
+//    });
+//    citynames.initialize();
+//
+//    $('#tags').tagsinput({
+//      typeaheadjs: {
+//        name: 'citynames',
+//        displayKey: 'name',
+//        valueKey: 'name',
+//        source: citynames.ttAdapter()
+//      }
+//    });
+//}
 
 </script>

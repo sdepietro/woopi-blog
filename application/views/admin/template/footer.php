@@ -9,18 +9,18 @@
 <script src="<?= base_url() ?>assets/admin/js/jquery.ui.custom.js"></script>
 <script src="<?= base_url() ?>assets/admin/js/bootstrap.min.js"></script>
 
-<!--<script src="<?= base_url() ?>assets/admin/js/bootstrap-datepicker.js"></script>
-<script src="<?= base_url() ?>assets/admin/js/jquery.peity.min.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/fullcalendar.min.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/matrix.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/jquery.gritter.min.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/matrix.interface.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/jquery.validate.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/jquery.wizard.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/jquery.uniform.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/select2.min.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/jquery.dataTables.min.js"></script> 
-<script src="<?= base_url() ?>assets/admin/js/matrix.tables.js"></script> -->
-<!--<script src="<?= base_url() ?>assets/admin/js/typeahead.bundle.js"></script> -->
+<script src="<?= base_url() ?>assets/admin/js/bootstrap-datepicker.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/jquery.peity.min.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/fullcalendar.min.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/matrix.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/jquery.gritter.min.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/matrix.interface.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/jquery.validate.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/jquery.wizard.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/jquery.uniform.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/select2.min.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/matrix.tables.js"></script>
+<script src="<?= base_url() ?>assets/admin/js/typeahead.bundle.js"></script>
 
 
