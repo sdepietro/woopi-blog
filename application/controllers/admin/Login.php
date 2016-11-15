@@ -40,7 +40,7 @@ class Login extends CI_Controller {
                     );
                     $this->session->set_userdata($sess_array);
                 }
-                redirect('admin/dashboard', 'refresh');
+                redirect('admin/posts', 'refresh');
             }
             else {
                 // echo "va por aca";
