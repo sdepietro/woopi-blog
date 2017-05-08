@@ -746,6 +746,8 @@ abstract class REST_Controller extends CI_Controller {
      */
     public function response($data = NULL, $http_code = NULL, $continue = FALSE)
     {
+        $this->output->set_header('Access-Control-Allow-Origin: *');
+
         // If the HTTP status is not NULL, then cast as an integer
         if ($http_code !== NULL)
         {

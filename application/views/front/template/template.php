@@ -9,7 +9,7 @@
             <div class="row">
                 <!-- Entradas del blog -->
                 <div class="col-md-8">
-                    <?php $this->load->view($main_content); //en esta variable voy a cargar la otra vista que quiero que cargue. ej: login ?>
+                    <?php $this->load->view($main_content);  ?>
                 </div>
                 <!-- Columna de filtros -->
                 <div class="col-md-4">

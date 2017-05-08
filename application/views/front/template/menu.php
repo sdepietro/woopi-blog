@@ -17,6 +17,13 @@
                     <a href="<?= base_url() ?>">Noticias</a>
                 </li>
             </ul>
+            <?php foreach ($links_list as $link): ?>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="<?= $link->url ?>"><?= $link->title ?></a>
+                    </li>
+                </ul>
+            <?php endforeach; ?>
         </div>
         <!-- /.navbar-collapse -->
     </div>

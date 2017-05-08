@@ -34,7 +34,6 @@ if (!function_exists('get_w_config'))
 
         if (empty($CI->w_config))
         {
-
             $config = get_w_config();
         }
         $return = "";

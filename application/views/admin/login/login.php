@@ -14,7 +14,7 @@
     <body>
         <div id="loginbox">            
             <form id="loginform" class="form-vertical" method="post" action="<?= base_url() ?>admin/login/iniciarsesion">
-                <div class="control-group normal_text"> <h3><img src="<?= base_url() ?>assets/admin/img/logo.png" alt="Logo" /></h3></div>
+                <div class="control-group normal_text"> <h3><img src="<?= base_url() ?>assets/img/logo.png" alt="Logo" /></h3></div>
 
 
                 <div class="control-group">

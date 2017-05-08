@@ -8,6 +8,7 @@ class Post extends CI_Controller {
         parent::__construct();
         $this->load->model('Categories_Model');
         $this->load->model('Posts_Model');
+        $this->load->model('Links_Model');
     }
 
     public function index($post_id = null) {
@@ -19,7 +20,8 @@ class Post extends CI_Controller {
         $data_config['post_id'] = $post_id;
         $data['post'] = $this->Posts_Model->get($data_config);
 
-        $data['categories_list'] = $this->Categories_Model->get();
+        $data['categories_list'] = $this->Categories_Model->get_only_content();
+        $data['links_list'] = $this->Links_Model->get();
         $data['main_content'] = "front/post/id_view";
         $this->load->view('front/template/template', $data);
     }

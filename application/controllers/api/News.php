@@ -1,5 +1,4 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH . '/libraries/REST_Controller.php';
@@ -28,6 +27,7 @@ class News extends REST_Controller
             $post->text = substr(strip_tags($post->text), 0, 200) . '...';
             $post->image = base_url('assets/img/posts/') . $post->image;
         }
+
 
         $this->set_response($posts_list, REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
     }

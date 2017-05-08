@@ -48,6 +48,7 @@ Class Posts_Model extends CI_Model
         }
 
 
+        $this->db->where('categories.deleted', NULL);
         $this->db->where('post.deleted', NULL);
         $query = $this->db->get();
 
