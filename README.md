@@ -12,6 +12,13 @@ Desarrollo de un sistema de blog completo. Con las siguientes características b
 - Tags
 - Comentarios
 
+## Instalación
+
+- Bajar el repo
+- Crear la DB en el server de mysql
+- Editar la variable $db['default'] del archivo /applications/database.php con los datos de la base de datos
+- Enjoy!
+
 ## Autores
 
 ### Sergio De Pietro
