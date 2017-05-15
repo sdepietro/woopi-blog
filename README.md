@@ -6,11 +6,11 @@ Blog creado en Codeigniter 3
 
 Desarrollo de un sistema de blog completo. Con las siguientes características básicas.
 
--[x] Usuarios
--[x] ABM de categorías
--[x] ABM de noticias
--[x] Tags
--[ ] Comentarios
+- [x] Usuarios
+- [x] ABM de categorías
+- [x] ABM de noticias
+- [x] Tags
+- [ ] Comentarios
 
 ## Instalación
 
