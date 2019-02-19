@@ -1,9 +1,9 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * @file application/libraries/Image_autorotate.php
+ * @file application/libraries/Image_optimization.php
  */
-class Image_autorotate
+class Image_optimization
 {
     function __construct($params = NULL) {
 
@@ -76,4 +76,4 @@ class Image_autorotate
     }
 }
 
-// END class Image_autorotate
+// END class Image_optimization
