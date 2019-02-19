@@ -164,7 +164,7 @@ class Posts extends CI_Controller
                     $imageinfo = $this->upload->data();
                     $full_path = $imageinfo['full_path'];
                     // check EXIF and autorotate if needed, optimize size and dimensions
-                    $this->load->library('image_autorotate', array('filepath' => $full_path));
+                    $this->load->library('image_optimization', array('filepath' => $full_path));
 
                 }
 
