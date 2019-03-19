@@ -132,6 +132,7 @@ class Posts extends CI_Controller
             }
 
             if (!empty($_FILES['post_image']['name'])) {
+
                 $name = $_FILES['post_image']['name'];
                 $v = explode(".", $name);
                 $ext = end($v);
@@ -158,7 +159,15 @@ class Posts extends CI_Controller
                         "image" => $new_name
                     );
                     $this->Posts_Model->edit($data_update, $post_id); //Si se sube bien, actualizamos el nombre de la imagen
+
+                    // IMAGE OPTIMIZATION
+                    $imageinfo = $this->upload->data();
+                    $full_path = $imageinfo['full_path'];
+                    // check EXIF and autorotate if needed, optimize size and dimensions
+                    $this->load->library('image_optimization', array('filepath' => $full_path));
+
                 }
+
             }
 
             if (empty($errors)) {

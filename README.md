@@ -16,7 +16,9 @@ Desarrollo de un sistema de blog completo. Con las siguientes características b
 
 - Bajar el repo
 - Crear la DB en el server de mysql
-- Editar la variable $db['default'] del archivo /applications/database.php con los datos de la base de datos
+- Editar la variable $db['default'] del archivo /applications/config/database.php con los datos de la base de datos
+- Edita la variable $config['base_url'] del archivo /application/config/config.php con el directorio base de tu proyecto
+- Para administrar el blog, ingresa en {base_url}/admin/login
 - Enjoy!
 
 ## Autores
